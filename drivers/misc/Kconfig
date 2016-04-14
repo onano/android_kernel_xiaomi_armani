@@ -577,6 +577,13 @@ config HAPTIC_ISA1200
 	help
 	  The ISA1200 is a high performance enhanced haptic driver.
 
+config HAPTIC_ISA1000
+	tristate "ISA1000 haptic support"
+	depends on ANDROID_TIMED_OUTPUT
+	default n
+	help
+	  The ISA1000 is a high performance enhanced haptic driver.
+
 config PMIC8058_PWM
 	tristate "Qualcomm PM8058 PWM support"
 	depends on PMIC8058
@@ -665,13 +672,6 @@ config TI_DRV2667
 	  To compile this driver as a module, choose M here: the
 	  module will be called ti_drv2667.
 
-config IMMERSION_HAPTIC
-	tristate "Immersion haptic controller support"
-	depends on I2C
-	default n
-	help
-	  The driver support immersion haptic controller.
-
 source "drivers/misc/c2port/Kconfig"
 source "drivers/misc/eeprom/Kconfig"
 source "drivers/misc/cb710/Kconfig"
@@ -680,5 +680,4 @@ source "drivers/misc/ti-st/Kconfig"
 source "drivers/misc/lis3lv02d/Kconfig"
 source "drivers/misc/carma/Kconfig"
 source "drivers/misc/altera-stapl/Kconfig"
-source "drivers/misc/tspdrv/Kconfig"
 endmenu
